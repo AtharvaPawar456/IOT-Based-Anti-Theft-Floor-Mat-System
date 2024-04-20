@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="10">    
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Theft Detection</title>
+</head>
+<body>
+    <!-- <img src="{{ url_for('static', filename='uploaded_image.jpg') }}" class="image" /> -->
+    
+    <!-- <div class="text-3xl font-bold text-center mt-4">Uploaded Image</div> -->
+
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-gray-300 p-2 rounded-lg">
+            <!-- Your content here -->
+            <a href="/" 
+                class="mx-4 items-right text-center mt-4 font-bold hover:bg-gray-600 hover:text-white p-1 rounded-md text-green-800 border border-gray-700 border-2">
+                <i class="fa-solid fa-rotate-right mr-2"></i>Refresh
+            </a>
+            <a href="/history" 
+                class="mx-4 items-right text-center mt-4 font-bold hover:bg-gray-600 hover:text-white p-1 rounded-md text-green-800 border border-gray-700 border-2">
+                <i class="fa-solid fa-table-list mr-2"></i>History
+            </a>
+
+            <!-- <img src="uploaded_image.jpg" class="image h-80 rounded-xl m-1 mt-4 border border-4 border-gray-600" alt="uploaded_image.jpg" /> -->
+            
+            <img src="{{ url_for('static', filename='uploaded_image.jpg') }}" class="image h-80 rounded-xl m-1 mt-4 border border-4 border-gray-600" alt="uploaded_image.jpg" />
+            
+            <p class="text-center mt-4 font-bold">Last Captured Pic !!!</p>
+            <p class="text-center mt-4 font-bold text-indigo-600 border border-2 rounded-md shadow-xl ">
+                <i class="fa-solid fa-user-secret mr-2"></i>Theft Detection System</p>
+        
+        </div>
+    </div>
+</body>
+</html>

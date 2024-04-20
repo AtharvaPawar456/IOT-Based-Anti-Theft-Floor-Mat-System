@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="10">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Theft Detection History</title>
+</head>
+<body>
+    <div class="text-center text-3xl font-bold text-gray-600 mt-4 mb-20">History Pics</div>
+    <div class="text-center mb-10">
+        <a href="/" class="text-center hover:underline hover:font-bold hover:text-indigo-700 p-1 border border-2 bg-indigo-100 rounded-md mx-4">Home</a>
+        <a href="/history" class="text-center hover:underline hover:font-bold hover:text-indigo-700 p-1 border border-2 bg-indigo-100 rounded-md mx-4">Refresh</a>
+    </div>
+
+  
+    <div class="grid lg:grid-cols-4 gap-4 border lg:mx-20 mx-2 rounded-md p-2 shadow">
+        {% for file in content %}
+            <div class="text-center">
+                <img src="{{ url_for('static', filename=file.filename) }}" 
+                  class="image h-80 rounded-xl m-1 mt-4 border border-4 border-gray-600" alt="{{ file.filename }}" />
+                <b>Date:</b> {{ file.filedate }} <b>Time:</b> {{ file.filetime }}
+            </div>
+        {% endfor %}
+    </div>
+    
+</body>
+</html>
