@@ -7,19 +7,6 @@ import shutil
 
 app = Flask(__name__)
 
-# @app.route('/upload', methods=['POST'])
-# def upload():
-#     if 'image' not in request.files:
-#         return jsonify({'error': 'No image found'}), 400
-#     image = request.files['image']
-#     # Do something with the image, like save it to disk or process it
-#     image.save('uploaded_image.jpg')
-#     return jsonify({'message': 'Image uploaded successfully'}), 200
-
-# @app.route('/')
-# def home():
-#     return 'Hello'
-
 
 @app.route('/')
 def home():
@@ -81,9 +68,26 @@ def upload():
         print('Error:', error_message)
         return jsonify({'error': error_message}), 500
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
 
 if __name__ == '__main__':
+  # app.run(debug=True)
   # app.run(host='0.0.0.0', port=80)
   app.run(debug=True, host='0.0.0.0', port=80)
+
+
+# Old Code
+'''
+# @app.route('/upload', methods=['POST'])
+# def upload():
+#     if 'image' not in request.files:
+#         return jsonify({'error': 'No image found'}), 400
+#     image = request.files['image']
+#     # Do something with the image, like save it to disk or process it
+#     image.save('uploaded_image.jpg')
+#     return jsonify({'message': 'Image uploaded successfully'}), 200
+
+# @app.route('/')
+# def home():
+#     return 'Hello'
+
+'''
